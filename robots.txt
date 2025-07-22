@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://amandabednarick.github.io/sitemap.xml
