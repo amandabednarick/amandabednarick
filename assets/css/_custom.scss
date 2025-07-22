@@ -1,0 +1,12 @@
+.publications {
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+  max-width: 100%;
+}
+
+.publications > li {
+  text-align: left;
+  list-style-position: outside; /* Optional: makes bullets align better */
+}
+

@@ -1,18 +1,30 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
+<!-- Banner section with name overlay -->
+<div style="position: relative; text-align: center; margin-bottom: 2rem;">
+  <img src="{{ '/assets/img/banner.jpg' | relative_url }}" alt="Banner" style="width: 100%; max-height: 400px; object-fit: cover; opacity: 0.7">
+  
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+              color: white; text-shadow: 0px 0px 10px rgba(0,0,0,0.7);">
+    <h1 style="font-size: 3rem; margin: 0;">
       {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
       {% else %}
         {{ site.title }}
       {% endif %}
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
+    <h3 style="margin-top: 0.2em;">
+      {{ site.hero.subtitle }}
+    </h3>
+  </div>
+</div>
+
+<!-- <div class="post"> -->
+  <!-- <header class="post-header"> -->
+    
+  <!-- <p class="desc">{{ page.subtitle }}</p> -->
+  <!-- </header> -->
 
   <article>
     {% if page.profile %}
@@ -58,10 +70,20 @@ layout: default
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
+      <style>
+        .publications {
+          text-align: left;
+          margin-left: 0;
+          padding-left: 0;
+          max-width: 100%;
+        }
+      </style>
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Recent publication</a>
       </h2>
-      {% include selected_papers.liquid %}
+      <div style="text-align: left;">
+        {% include selected_papers.liquid %}
+      </div>
     {% endif %}
 
     <!-- Social -->
